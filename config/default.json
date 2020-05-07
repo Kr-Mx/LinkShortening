@@ -1,0 +1,5 @@
+{
+"port": 5000,
+  "jwtSecret": "mern asd",
+  "mongoUrl": "mongodb+srv://admin:TJtLk03Ra7IRvZSH@cluster0-kfscy.mongodb.net/test?retryWrites=true&w=majority"
+}
