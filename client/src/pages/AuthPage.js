@@ -1,22 +1,22 @@
 import React, {useState, useContext} from 'react';
-import {useHttp} from "../hooks/http.hook";
-import {AuthContext} from "../context/AuthContext";
+import {useHttp} from '../hooks/http.hook';
+import {AuthContext} from '../context/AuthContext';
 
 import {
     Button, Grid, TextField, InputAdornment, Divider, Card,
     CardContent, CardActions, Typography, Snackbar, IconButton
-} from "@material-ui/core";
+} from '@material-ui/core';
 import VpnKeyIcon from '@material-ui/icons/VpnKey';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import VisibilityOffIcon from '@material-ui/icons/VisibilityOff';
-import MuiAlert from "@material-ui/lab/Alert";
-import {useStyles} from "../styles/AuthPageStyles";
+import MuiAlert from '@material-ui/lab/Alert';
+import {useStyles} from '../styles/AuthPageStyles';
 
 export const AuthPage = () => {
     const auth = useContext(AuthContext);
     const {loading, error, request, clearError} = useHttp();
-    const [form, setForm] = useState({email: "", password: ""});
+    const [form, setForm] = useState({email: '', password: ''});
     const [showPassword, setShowPassword] = useState(false);
     const classes = useStyles();
 
@@ -46,36 +46,35 @@ export const AuthPage = () => {
     return (
         <Grid
             container
-            justify={"center"}
-            alignItems={"center"}
+            justify={'center'}
+            alignItems={'center'}
             className={classes.cardWrapper}>
             <Card>
                 <Typography
-                    variant={"h6"}
-                    align={"center"}>
+                    variant={'h6'}
+                    align={'center'}>
                     Welcome
                 </Typography>
                 <Divider/>
-                <CardContent>
                     <Grid
                         container
-                        direction={"column"}
-                        justify={"space-evenly"}
+                        direction={'column'}
+                        justify={'space-evenly'}
                         className={classes.cardContent}>
                         <Typography
-                            variant={"body1"}
-                            align={"center"}>
+                            variant={'body1'}
+                            align={'center'}>
                             Please enter your user credentials:
                         </Typography>
                         <TextField
-                            name={"email"}
-                            label="Email"
-                            color="secondary"
-                            type={"text"}
+                            name={'email'}
+                            label='Email'
+                            color='secondary'
+                            type={'text'}
                             value={form.email}
                             InputProps={{
                                 startAdornment: (
-                                    <InputAdornment position="start">
+                                    <InputAdornment position='start'>
                                         <AccountCircleIcon/>
                                     </InputAdornment>
                                 ),
@@ -83,21 +82,21 @@ export const AuthPage = () => {
                             onChange={changeHandler}
                         />
                         <TextField
-                            name={"password"}
-                            label="Password"
-                            color="secondary"
-                            type={showPassword ? "text" : "password"}
+                            name={'password'}
+                            label='Password'
+                            color='secondary'
+                            type={showPassword ? 'text' : 'password'}
                             value={form.password}
                             InputProps={{
                                 startAdornment: (
-                                    <InputAdornment position="start">
+                                    <InputAdornment position='start'>
                                         <VpnKeyIcon/>
                                     </InputAdornment>
                                 ),
                                 endAdornment: (
-                                    <InputAdornment position="start">
+                                    <InputAdornment position='start'>
                                         <IconButton
-                                            size="small"
+                                            size='small'
                                             onClick={() => {setShowPassword(!showPassword)}}>
                                             {showPassword ? <VisibilityIcon/> : <VisibilityOffIcon/>}
                                         </IconButton>
@@ -107,19 +106,18 @@ export const AuthPage = () => {
                             onChange={changeHandler}
                         />
                     </Grid>
-                </CardContent>
                 <Divider/>
                 <CardActions className={classes.cardActions}>
                     <Button
-                        color="secondary"
-                        variant="contained"
+                        color='secondary'
+                        variant='contained'
                         disabled={loading}
                         onClick={registerHandler}>
                         Registration
                     </Button>
                     <Button
-                        color="secondary"
-                        variant="outlined"
+                        color='secondary'
+                        variant='outlined'
                         disabled={loading}
                         onClick={loginHandler}>
                         Login
@@ -131,8 +129,8 @@ export const AuthPage = () => {
                 open={!!error}
                 onClose={clearError}>
                 <MuiAlert
-                    variant="filled"
-                    severity="error"
+                    variant='filled'
+                    severity='error'
                     elevation={6}
                     onClose={clearError}>
                     {error}

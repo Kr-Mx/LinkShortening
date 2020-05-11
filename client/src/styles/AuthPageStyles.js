@@ -8,6 +8,7 @@ export const useStyles = makeStyles((theme) => ({
     },
     cardContent: {
         height: "180px",
+        padding:"0 20px"
     },
     cardActions: {
         justifyContent: "center"
