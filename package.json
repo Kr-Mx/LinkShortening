@@ -5,7 +5,10 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "server": "nodemon app.js"
+    "server": "nodemon app.js",
+    "client": "npm run start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "lint": "eslint ./ --ignore-path .gitignore --fix"
   },
   "keywords": [
     "mern",
@@ -13,16 +16,30 @@
   ],
   "author": "Kryshneu Maksim <maks.kryshnev@gmail.com>",
   "license": "MIT",
+
   "dependencies": {
     "bcrypt": "^4.0.1",
     "config": "^3.3.1",
     "express": "^4.17.1",
     "express-validator": "^6.4.1",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.9.12"
+    "mongoose": "^5.9.12",
+    "shortid": "^2.2.15"
   },
   "devDependencies": {
     "concurrently": "^5.2.0",
-    "nodemon": "^2.0.3"
+    "eslint": "6.7.2",
+    "eslint-config-prettier": "6.7.0",
+    "eslint-plugin-flowtype": "^4.7.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-node": "10.0.0",
+    "eslint-plugin-prettier": "3.1.1",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^4.0.0",
+    "husky": "3.1.0",
+    "lint-staged": "9.5.0",
+    "nodemon": "^2.0.3",
+    "prettier": "1.19.1"
   }
 }
