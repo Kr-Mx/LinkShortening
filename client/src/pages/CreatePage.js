@@ -40,17 +40,14 @@ export const CreatePage = () => {
             justify='center'
             alignItems='center'
             className={classes.root}>
-            <Box component={Grid}
+            <Grid
                  container
                  justify='center'
                  direction='row'
                  alignItems='center'>
-                <Box
-                    component={Typography}
-                    variant='h6'
-                    m={2}>
-                    Paste your link here:
-                </Box>
+                <Typography variant='h6'>
+                    Paste your link here:&nbsp;
+                </Typography>
                 <TextField
                     variant='outlined'
                     autoFocus
@@ -79,7 +76,7 @@ export const CreatePage = () => {
                     onClick={pressHandler}>
                     Submit
                 </Box>
-            </Box>
+            </Grid>
             <Snackbar
                 autoHideDuration={1000}
                 open={!!error}

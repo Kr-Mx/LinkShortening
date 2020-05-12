@@ -3,8 +3,7 @@ import {useHttp} from '../hooks/http.hook';
 import {AuthContext} from '../context/AuthContext';
 
 import {
-    Button, Grid, TextField, InputAdornment, Divider, Card,
-    CardContent, CardActions, Typography, Snackbar, IconButton
+    Button, Grid, TextField, InputAdornment, Divider, Card, CardActions, Typography, Snackbar, IconButton, Box
 } from '@material-ui/core';
 import VpnKeyIcon from '@material-ui/icons/VpnKey';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
@@ -50,11 +49,13 @@ export const AuthPage = () => {
             alignItems={'center'}
             className={classes.cardWrapper}>
             <Card>
-                <Typography
+                <Box
+                    component={Typography}
                     variant={'h6'}
-                    align={'center'}>
+                    align={'center'}
+                m={1}>
                     Welcome
-                </Typography>
+                </Box>
                 <Divider/>
                     <Grid
                         container

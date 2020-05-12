@@ -8,8 +8,7 @@ import {
     TableBody,
     Typography,
     Box,
-    IconButton,
-    makeStyles
+    IconButton
 } from '@material-ui/core';
 import SentimentDissatisfiedIcon from '@material-ui/icons/SentimentDissatisfied';
 import OpenInNewIcon from '@material-ui/icons/OpenInNew';
